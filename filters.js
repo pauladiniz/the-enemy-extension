@@ -1,16 +1,18 @@
 const elements = [...document.getElementsByTagName('*')];
 
-const enemy = ['Agicap', 'AgiCap'];
+const guessWho = [
+'Agicap', 'Agicap', 'Agi cap'
+];
 
 elements.forEach((element) => {
   const validNodes = [...element.childNodes].filter(n => n.nodeType === 3);
 
   validNodes.forEach((node) => {
     const text = node.nodeValue;
-    const agicrapSux = text.replace(new RegExp(enemy.join('|'), 'ig'), 'Agicrap');
+    const enemySux = text.replace(new RegExp(guessWho.join('|'), 'ig'), 'Agicrap');
 
-    if (agicrapSux !== text) {
-      node.nodeValue = agicrapSux;
+    if (enemySux !== text) {
+      node.nodeValue = enemySux;
     }
   });
 });
